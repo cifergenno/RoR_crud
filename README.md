@@ -2,7 +2,7 @@
 A simple CRUD using Ruby on Rails.
 
 
-To test, make sure to have the following installed.
+Make sure to have the following installed.
 1. nodejs
     https://nodejs.org/en/download/
 2. yarn
@@ -14,5 +14,11 @@ To test, make sure to have the following installed.
 5. rails
    via gem; gem install rails
    
- 
- 
+
+To test, follow the steps below;
+1. Open command line
+3. For first time testing, run the following command
+   a. `bundle install`
+   b. `rails db:migrate`
+4. Start the rails server; run `rails s` on the command line
+5. Navigate to http://localhost:3000/products on your browser
