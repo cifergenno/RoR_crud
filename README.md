@@ -24,20 +24,31 @@ To test, follow the steps below;
 5. Navigate to http://localhost:3000/products on your browser
 
 
-Screenshots
 
-Newly installed
+**Screenshots**
+
+---------------------------------------------------------------------------
+**Newly installed**
+
 ![alt text](https://github.com/cifergenno/RoR_crud/blob/main/app/assets/images/new_open.PNG?raw=true)
 
-Adding new record
+---------------------------------------------------------------------------
+**Adding new record**
+
 ![alt text](https://github.com/cifergenno/RoR_crud/blob/main/app/assets/images/new.PNG?raw=true)
 
-Update record
+---------------------------------------------------------------------------
+**Update record**
+
 ![alt text](https://github.com/cifergenno/RoR_crud/blob/main/app/assets/images/updated.PNG?raw=true)
 
-View record
+---------------------------------------------------------------------------
+**View record**
+
 ![alt text](https://github.com/cifergenno/RoR_crud/blob/main/app/assets/images/view.PNG?raw=true)
 
-Delete record
+---------------------------------------------------------------------------
+**Delete record**
+
 ![alt text](https://github.com/cifergenno/RoR_crud/blob/main/app/assets/images/on_delete.PNG?raw=true)
 
