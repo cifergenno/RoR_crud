@@ -1,0 +1,51 @@
+.header {
+    background-color: #a798c3;
+    margin: 20px auto;
+    width: 90%;
+    height: 40px;
+    padding: 9px;
+    color: #262424;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+
+ .table {
+    width: 90% !important;
+    margin: 0 auto;
+ }
+
+
+ .table_option{
+    width: 15%;
+ }
+
+ .table th tr {
+    background-color: #b5e59d;
+    text-align: center;
+ }
+
+ .create_new {
+    margin-left: 5%;
+ }
+
+ .product_view {
+   width: 500px;
+   margin: 20px auto;
+   border: 1px solid #ced4da;
+   padding: 10px;
+   border-radius: 10px;
+ }
+
+ .price{
+   text-align: right;
+ }
+
+ .submit_wrapper {
+   width: 100%;
+   text-align: center;
+ }
+
+ .table_desc{
+   width: 60%;
+ }

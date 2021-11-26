@@ -1,0 +1,23 @@
+
+<div class="product_view">
+  <div class="form-outline mb-4">
+    <label class="form-label" for="product_name">Name</label>
+    <%= text_field_tag :name,  @product.name, :class => "form-control", :disabled => true  %>
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="product_description">Description</label>
+    <%= text_area_tag :description,  @product.description, :class => "form-control", :disabled => true  %>
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="product_price">Price</label>
+    <%= number_field_tag :price,  @product.price, :class => "form-control", :disabled => true  %>
+  </div>
+
+  <div class="submit_wrapper">
+  <%= link_to "Back to list", products_path, :class => "btn btn-primary btn-block mb-4"  %>
+  </div>
+</div>
+    
+  
