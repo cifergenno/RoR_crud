@@ -1,23 +1,21 @@
-<%= form_for @product, :html => {:class => 'product_view'} do |f| %>
+<%= form_for :@product, :url => product_path, :html => { :method => :put, :class => 'product_view'} do |f| %>
 
   <div class="form-outline mb-4">
-    <%= f.label :name, :class => "form-label" %>
-    <%= f.text_field :name, :class => "form-control" %>
+    <label class="form-label" for="product_name">Name</label>
+    <%= text_field_tag :name,  @product["name"], :class => "form-control"  %>
   </div>
 
   <div class="form-outline mb-4">
-    <%= f.label :description, :class => "form-label"%>
-    <%= f.text_area :description, :class => "form-control" %>
+    <label class="form-label" for="product_name">Description</label>
+    <%= text_area_tag :description,  @product["description"], :class => "form-control"  %>
   </div>
 
   <div class="form-outline mb-4">
-    <%= f.label :price, :class => "form-label" %>
-    <%= f.number_field :price, :class => "form-control price"  %>
+    <label class="form-label" for="product_name">Price</label>
+    <%= number_field_tag :price,  @product["price"], :class => "form-control"  %>
   </div>
-
   <div class="submit_wrapper">
-  <%= f.submit "Update", :class=>"btn btn-primary btn-block mb-4"%>
-  <%= link_to "Cancel", products_path, :class => "btn btn-secondary btn-block mb-4"  %>
+    <%= f.submit "Update", :class=>"btn btn-primary btn-block mb-4"%>
+    <%= link_to "Cancel", products_path, :class => "btn btn-secondary btn-block mb-4"  %>
   </div>
-
 <% end %>

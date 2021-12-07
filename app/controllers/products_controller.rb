@@ -1,6 +1,9 @@
+require 'httparty'
 class ProductsController < ApplicationController
+  include HTTParty
     def index
-      @products = Product.all
+      responce = HTTParty.get('http://localhost:3000/products')
+      @products=JSON.parse(responce.body)
     end
   
     def new
@@ -8,25 +11,48 @@ class ProductsController < ApplicationController
     end
   
     def create
-      @product = Product.new(product_params)
-        if @product.save
+      puts "uuuuuuuuuuuuuuuuuuuuuuuu"
+      data = params["product"]
+      puts "uuuuuuuuuuuuuuuuuuuuuuuu"
+
+      url = 'http://localhost:3000/products/'
+      data = { "product":{
+        "name": data["name"],
+        "description": data["description"],
+        "price": data["price"],
+        } }
+        
+      @product = HTTParty.post(url, body: data)
+      @product=JSON.parse(@product.body)
+        if @product["status"].eql? "Success"
           redirect_to products_path
         else
           render :new
         end
+
     end
 
     def view
-        @product = Product.find(params[:id])
+        @product = HTTParty.get('http://localhost:3000/products/'+params[:id])
+        @product=JSON.parse(@product.body)
     end
-  
+    
     def edit
-        @product = Product.find(params[:id])
+        @product = HTTParty.get('http://localhost:3000/products/'+params[:id])
+        @product=JSON.parse(@product.body)
     end
   
     def update
-      @product = Product.find(params[:id])
-        if @product.update(product_params)
+      url = 'http://localhost:3000/products/'+params[:id]
+      data = { "product":{
+        "name": params[:name],
+        "description": params[:description],
+        "price": params[:price],
+        } }
+
+      @product = HTTParty.put(url, body: data)
+      @product=JSON.parse(@product.body)
+        if @product["status"].eql? "Success"
           redirect_to products_path
         else
           render :edit
@@ -34,8 +60,8 @@ class ProductsController < ApplicationController
     end
   
     def destroy
-      @product = Product.find(params[:id])
-      @product.destroy
+      @product = HTTParty.delete('http://localhost:3000/products/'+params[:id])
+      @product=JSON.parse(@product.body)
       redirect_to products_path
     end
   
